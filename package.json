@@ -1,0 +1,9 @@
+{
+  "name": "photo-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "极简摄影作品个人网站：原生 HTML/CSS/JS，零运行时依赖。",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}

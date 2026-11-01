@@ -1,0 +1,51 @@
+/* base.css —— 全局排版、可访问性焦点样式、跳过链接与滚动锁定 */
+html {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--bg);
+}
+
+body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -100px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: var(--fs-small);
+}
+
+.skip-link:focus {
+  top: 8px;
+  color: var(--bg);
+}
+
+.no-scroll {
+  overflow: hidden;
+}

@@ -1,0 +1,125 @@
+/* lightbox.css —— 图片灯箱：遮罩、控制按钮、图注与焦点样式 */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 10, 10, 0.96);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+}
+
+.lightbox-counter {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--fs-small);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.lightbox-prev {
+  left: 16px;
+}
+
+.lightbox-next {
+  right: 16px;
+}
+
+.lightbox-prev[disabled],
+.lightbox-next[disabled] {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.lightbox-stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: min(90vw, 1100px);
+  margin: 0;
+}
+
+.lightbox-stage img {
+  max-width: 100%;
+  max-height: 74vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  color: #ffffff;
+  font-size: var(--fs-small);
+}
+
+.lightbox-meta {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.lightbox :focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lightbox:not([hidden]) .lightbox-stage,
+  .lightbox:not([hidden]) .lightbox-prev,
+  .lightbox:not([hidden]) .lightbox-next,
+  .lightbox:not([hidden]) .lightbox-close,
+  .lightbox:not([hidden]) .lightbox-counter {
+    animation: lightbox-in var(--duration) ease;
+  }
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "lang": "zh-CN",
+  "name": "JUN",
+  "tagline": "以安静的方式，记录城市与自然。",
+  "description": "JUN 的极简摄影作品集。",
+  "email": "2192117135@qq.com",
+  "xiaohongshu": "5085763125",
+  "hero": {
+    "src": "assets/photos/fragments-2022-2026/xuanwu-2026-2560w.jpg",
+    "srcset": "assets/photos/fragments-2022-2026/xuanwu-2026-640w.jpg 640w, assets/photos/fragments-2022-2026/xuanwu-2026-960w.jpg 960w, assets/photos/fragments-2022-2026/xuanwu-2026-1440w.jpg 1440w, assets/photos/fragments-2022-2026/xuanwu-2026-2048w.jpg 2048w, assets/photos/fragments-2022-2026/xuanwu-2026-2560w.jpg 2560w",
+    "width": 2560,
+    "height": 1707,
+    "alt": "南京玄武湖的湖景"
+  }
+}
